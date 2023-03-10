@@ -2,11 +2,11 @@ library document_builder;
 
 import 'package:flutter/cupertino.dart';
 
-export 'package:document_builder/widgets/list.dart' show ListDoc, ListOptions;
-export 'package:document_builder/widgets/sub_title.dart' show SubTitleDoc, SubTitleOptions;
-export 'package:document_builder/widgets/title.dart' show TitleDoc, TitleOptions;
-export 'package:document_builder/widgets/text.dart' show TextDoc, TextOptions;
-export 'package:document_builder/widgets/table.dart' show TableDoc, TableOptions;
+export 'package:document_builder/widgets/list.dart' show ListDoc, ListOptions, ListFormat;
+export 'package:document_builder/widgets/sub_title.dart' show SubTitleDoc, SubTitleOptions, SubTitleFormat;
+export 'package:document_builder/widgets/title.dart' show TitleDoc, TitleOptions, TitleFormat;
+export 'package:document_builder/widgets/text.dart' show TextDoc, TextOptions, TextFormat;
+export 'package:document_builder/widgets/table.dart' show TableDoc, TableOptions, TableFormat;
 
 
 abstract class ElementOptions {}
