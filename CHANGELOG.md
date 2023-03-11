@@ -17,3 +17,8 @@
 ## 0.0.5
 
 * Refactoring all logic [DocumentBuilder]
+
+
+## 0.0.6
+
+* Create Documentation
