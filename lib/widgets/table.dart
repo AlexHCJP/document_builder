@@ -6,7 +6,7 @@ class TableOptions extends ElementOptions {
 
   final List<List<String>> table;
 
-  TableOptions({required this.table,});
+  TableOptions({required this.table});
 }
 
 class TableFormat extends DocFormat<TableOptions> {

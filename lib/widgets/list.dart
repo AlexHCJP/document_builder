@@ -8,11 +8,26 @@ class ListOptions extends ElementOptions {
   final List list;
   final String indexList;
 
-  ListOptions(
-      {required this.indexList,
-        required this.list,
-        this.title,
-        this.description});
+  ListOptions({
+    required this.indexList,
+    required this.list,
+    this.title,
+    this.description
+  });
+
+  ListOptions copyWith({
+    String? indexList,
+    List? list,
+    String? title,
+    String? description
+  }) {
+    return ListOptions(
+      indexList: indexList ?? this.indexList,
+      list: list ?? this.list,
+      title: title ?? this.title,
+      description: description ?? this.description
+    );
+  }
 }
 
 class ListFormat extends DocFormat<ListOptions> {

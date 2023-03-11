@@ -10,3 +10,7 @@
 
 * Practice
 
+## 0.0.4
+
+* Delete left directories
+

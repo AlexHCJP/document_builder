@@ -1,6 +1,6 @@
 name: document_builder
 description: A package for creating beautiful privacy policies, user agreements, and more
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/AlexHCJP/document_builder
 
 environment:
@@ -20,8 +20,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
-
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

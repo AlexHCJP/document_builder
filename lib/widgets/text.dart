@@ -15,10 +15,12 @@ class TextOptions extends ElementOptions {
 
   TextOptions copyWith({
     String? text,
+    TextAlign? textAlign,
     TextStyle? style
   }) {
     return TextOptions(
         text: text ?? this.text,
+        textAlign: textAlign ?? this.textAlign,
         style: style ?? this.style
     );
   }

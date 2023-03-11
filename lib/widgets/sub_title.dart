@@ -2,9 +2,23 @@ import 'package:document_builder/document_builder.dart';
 import 'package:flutter/material.dart';
 
 class SubTitleOptions extends ElementOptions {
-  final String title;
+  final String text;
+  final TextStyle style;
 
-  SubTitleOptions(this.title);
+  SubTitleOptions({
+    required this.text,
+    this.style = const TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500)
+  });
+
+  SubTitleOptions copyWith({
+    String? text,
+    TextStyle? style
+  }) {
+    return SubTitleOptions(
+        text: text ?? this.text,
+        style: style ?? this.style
+    );
+  }
 }
 
 class SubTitleFormat extends DocFormat<SubTitleOptions> {
@@ -21,9 +35,8 @@ class SubTitleDoc extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 20),
       child: Text(
-        options.title,
-        style: const TextStyle(
-            fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
+        options.text,
+        style: options.style,
       ),
     );
   }
