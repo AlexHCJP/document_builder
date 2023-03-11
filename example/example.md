@@ -1,3 +1,4 @@
+```dart
 import 'package:document_builder/document_builder.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,9 @@ class ExampleScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: DocBuilder(
             options: [
-              TitleOptions('Title')
+              TitleOptions(
+                  text: 'Title'
+              )
             ],
             types: [
               TitleFormat(TitleOptions, (context, options) => TitleDoc(options: options))
@@ -21,5 +24,5 @@ class ExampleScreen extends StatelessWidget {
       ),
     );
   }
-
 }
+```

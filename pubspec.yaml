@@ -1,6 +1,6 @@
 name: document_builder
 description: A package for creating beautiful privacy policies, user agreements, and more
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/AlexHCJP/document_builder
 
 environment:

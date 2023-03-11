@@ -2,8 +2,23 @@ import 'package:document_builder/document_builder.dart';
 import 'package:flutter/material.dart';
 
 class TitleOptions extends ElementOptions {
-  final String title;
-  TitleOptions(this.title);
+  final String text;
+  final TextStyle style;
+
+  TitleOptions({
+    required this.text,
+    this.style = const TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w600)
+  });
+
+  TitleOptions copyWith({
+    String? text,
+    TextStyle? style
+  }) {
+    return TitleOptions(
+      text: text ?? this.text,
+      style: style ?? this.style
+    );
+  }
 }
 
 class TitleFormat extends DocFormat<TitleOptions> {
@@ -18,9 +33,8 @@ class TitleDoc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      options.title,
-      style: const TextStyle(
-          fontSize: 24, color: Colors.black, fontWeight: FontWeight.w600),
+      options.text,
+      style: options.style,
     );
   }
 }

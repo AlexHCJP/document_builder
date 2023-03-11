@@ -5,8 +5,23 @@ import 'package:flutter/material.dart';
 class TextOptions extends ElementOptions {
   final String text;
   final TextAlign textAlign;
+  final TextStyle style;
 
-  TextOptions({required this.text, this.textAlign = TextAlign.left});
+  TextOptions({
+    required this.text,
+    this.textAlign = TextAlign.center,
+    this.style = const TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600)
+  });
+
+  TextOptions copyWith({
+    String? text,
+    TextStyle? style
+  }) {
+    return TextOptions(
+        text: text ?? this.text,
+        style: style ?? this.style
+    );
+  }
 }
 
 class TextFormat extends DocFormat<TextOptions> {
@@ -25,8 +40,7 @@ class TextDoc extends StatelessWidget {
       alignment: Alignment.topRight,
       child: Text(
         options.text,
-        style: const TextStyle(
-            fontSize: 17, color: Colors.black, fontWeight: FontWeight.w500),
+        style: options.style,
         textAlign: options.textAlign,
       ),
     );
