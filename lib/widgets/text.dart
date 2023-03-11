@@ -26,9 +26,6 @@ class TextOptions extends ElementOptions {
   }
 }
 
-class TextFormat extends DocFormat<TextOptions> {
-  TextFormat(super.options, super.builder);
-}
 
 class TextDoc extends StatelessWidget {
   final TextOptions options;

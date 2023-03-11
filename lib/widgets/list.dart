@@ -30,10 +30,6 @@ class ListOptions extends ElementOptions {
   }
 }
 
-class ListFormat extends DocFormat<ListOptions> {
-  ListFormat(super.options, super.builder);
-}
-
 class ListDoc extends StatelessWidget {
   final ListOptions options;
 

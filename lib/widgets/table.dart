@@ -9,10 +9,6 @@ class TableOptions extends ElementOptions {
   TableOptions({required this.table});
 }
 
-class TableFormat extends DocFormat<TableOptions> {
-  TableFormat(super.options, super.builder);
-}
-
 class TableDoc extends StatelessWidget {
   final TableOptions options;
 

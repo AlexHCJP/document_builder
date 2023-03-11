@@ -15,14 +15,11 @@ class TitleOptions extends ElementOptions {
     TextStyle? style
   }) {
     return TitleOptions(
-      text: text ?? this.text,
-      style: style ?? this.style
+        text: text ?? this.text,
+        style: style ?? this.style
     );
   }
-}
 
-class TitleFormat extends DocFormat<TitleOptions> {
-  TitleFormat(super.options, super.builder);
 }
 
 class TitleDoc extends StatelessWidget {

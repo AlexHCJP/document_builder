@@ -21,10 +21,6 @@ class SubTitleOptions extends ElementOptions {
   }
 }
 
-class SubTitleFormat extends DocFormat<SubTitleOptions> {
-  SubTitleFormat(super.options, super.builder);
-}
-
 class SubTitleDoc extends StatelessWidget {
   final SubTitleOptions options;
 

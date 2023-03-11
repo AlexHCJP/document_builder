@@ -14,3 +14,6 @@
 
 * Delete left directories
 
+## 0.0.5
+
+* Refactoring all logic [DocumentBuilder]
