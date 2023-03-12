@@ -2,8 +2,7 @@ import 'package:document_builder/document_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-void main () {
+void main() {
   runApp(App());
 }
 
@@ -24,30 +23,26 @@ class ExampleScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
               padding: EdgeInsets.all(20),
-              child: Document(
-                  options: [
-                    TitleOptions(text: 'Title your document'),
-                    CustomElementOptions(
-                        icon: Icon(Icons.account_circle, size: 30,),
-                        text: 'The user has the right to be a user'
-                    )
-                  ],
-                  builders: [
-                    DocumentBuilder<CustomElementOptions>(
-                        builder: (context, options) => CustomElementWidget(options: options)
+              child: Document(options: [
+                TitleOptions(text: 'Title your document'),
+                CustomElementOptions(
+                    icon: Icon(
+                      Icons.account_circle,
+                      size: 30,
                     ),
-                    DocumentBuilder<TitleOptions>(
-                        builder: (context, options) => TitleDoc(options: options)
-                    )
-                  ]
-              )
-          ),
+                    text: 'The user has the right to be a user')
+              ], builders: [
+                DocumentBuilder<CustomElementOptions>(
+                    builder: (context, options) =>
+                        CustomElementWidget(options: options)),
+                DocumentBuilder<TitleOptions>(
+                    builder: (context, options) => TitleDoc(options: options))
+              ])),
         ),
       ),
     );
   }
 }
-
 
 class CustomElementOptions extends ElementOptions {
   final Widget icon;
@@ -55,15 +50,11 @@ class CustomElementOptions extends ElementOptions {
   final TextStyle style;
   final EdgeInsets padding;
 
-  CustomElementOptions({
-    required this.icon,
-    this.text,
-    this.style = const TextStyle(
-        fontSize: 17,
-        fontWeight: FontWeight.w700
-    ),
-    this.padding = const EdgeInsets.symmetric(vertical: 20)
-  });
+  CustomElementOptions(
+      {required this.icon,
+      this.text,
+      this.style = const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+      this.padding = const EdgeInsets.symmetric(vertical: 20)});
 }
 
 class CustomElementWidget extends StatelessWidget {
@@ -79,9 +70,12 @@ class CustomElementWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           options.icon,
-          SizedBox(width: 10,),
+          SizedBox(
+            width: 10,
+          ),
           Expanded(
-            child: Text(options.text ?? '',
+            child: Text(
+              options.text ?? '',
               style: options.style,
             ),
           )

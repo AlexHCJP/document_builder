@@ -5,21 +5,14 @@ class TitleOptions extends ElementOptions {
   final String text;
   final TextStyle style;
 
-  TitleOptions({
-    required this.text,
-    this.style = const TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w600)
-  });
+  TitleOptions(
+      {required this.text,
+      this.style = const TextStyle(
+          fontSize: 24, color: Colors.black, fontWeight: FontWeight.w600)});
 
-  TitleOptions copyWith({
-    String? text,
-    TextStyle? style
-  }) {
-    return TitleOptions(
-        text: text ?? this.text,
-        style: style ?? this.style
-    );
+  TitleOptions copyWith({String? text, TextStyle? style}) {
+    return TitleOptions(text: text ?? this.text, style: style ?? this.style);
   }
-
 }
 
 class TitleDoc extends StatelessWidget {

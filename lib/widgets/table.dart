@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TableOptions extends ElementOptions {
-
   final List<List<String>> table;
 
   TableOptions({required this.table});
@@ -18,18 +17,15 @@ class TableDoc extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
         border: TableBorder.all(),
-        children: options.table.map((tab){
+        children: options.table.map((tab) {
           return TableRow(
               children: tab.map((e) {
-                return TableCell(
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(e),
-                    )
-                );
-              }).toList()
-          );
-        }).toList()
-    );
+            return TableCell(
+                child: Container(
+              padding: const EdgeInsets.all(10),
+              child: Text(e),
+            ));
+          }).toList());
+        }).toList());
   }
 }

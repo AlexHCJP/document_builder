@@ -2,31 +2,24 @@ import 'package:document_builder/document_builder.dart';
 import 'package:flutter/material.dart';
 
 class ListOptions extends ElementOptions {
-
   final String? title;
   final String? description;
   final List list;
   final String indexList;
 
-  ListOptions({
-    required this.indexList,
-    required this.list,
-    this.title,
-    this.description
-  });
+  ListOptions(
+      {required this.indexList,
+      required this.list,
+      this.title,
+      this.description});
 
-  ListOptions copyWith({
-    String? indexList,
-    List? list,
-    String? title,
-    String? description
-  }) {
+  ListOptions copyWith(
+      {String? indexList, List? list, String? title, String? description}) {
     return ListOptions(
-      indexList: indexList ?? this.indexList,
-      list: list ?? this.list,
-      title: title ?? this.title,
-      description: description ?? this.description
-    );
+        indexList: indexList ?? this.indexList,
+        list: list ?? this.list,
+        title: title ?? this.title,
+        description: description ?? this.description);
   }
 }
 
@@ -67,8 +60,8 @@ class ListDoc extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: options.list.length,
             itemBuilder: (context, indexParent) {
-
-              if (options.list[indexParent].runtimeType == ListOptions(list: [], indexList: "1").runtimeType) {
+              if (options.list[indexParent].runtimeType ==
+                  ListOptions(list: [], indexList: "1").runtimeType) {
                 return ListDoc(options: options.list[indexParent]);
               }
 

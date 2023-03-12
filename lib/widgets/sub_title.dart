@@ -5,19 +5,13 @@ class SubTitleOptions extends ElementOptions {
   final String text;
   final TextStyle style;
 
-  SubTitleOptions({
-    required this.text,
-    this.style = const TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500)
-  });
+  SubTitleOptions(
+      {required this.text,
+      this.style = const TextStyle(
+          fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500)});
 
-  SubTitleOptions copyWith({
-    String? text,
-    TextStyle? style
-  }) {
-    return SubTitleOptions(
-        text: text ?? this.text,
-        style: style ?? this.style
-    );
+  SubTitleOptions copyWith({String? text, TextStyle? style}) {
+    return SubTitleOptions(text: text ?? this.text, style: style ?? this.style);
   }
 }
 
