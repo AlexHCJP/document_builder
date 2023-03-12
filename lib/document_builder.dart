@@ -10,43 +10,9 @@ export 'package:document_builder/widgets/table.dart' show TableDoc, TableOptions
 
 
 abstract class ElementOptions {}
-//
+
 typedef ElementBuilder<T> = Widget Function(BuildContext context, T options);
 
-// typedef IdentificatorBuilder<O extends ElementOptions> = Map<Type, ElementBuilder<O>>;
-//
-//
-// class DocFormat<O> extends StatelessWidget {
-//   Type options;
-//   ElementBuilder<O> builder;
-//
-//   DocFormat(this.options, this.builder);
-//
-//   // @override
-//   Widget build(BuildContext context) => builder(context, options);
-// }
-//
-//
-// class DocBuilder extends StatelessWidget {
-//   final List<DocFormat> types;
-//   final List<ElementOptions> options;
-//
-//   const DocBuilder({super.key, required this.options, required this.types});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//         children: options.map((option) {
-//           for (var element in types) {
-//             if(option.runtimeType == element.options) {
-//               return element.build(context);
-//             }
-//           }
-//           return Container();
-//         }).toList()
-//     );
-//   }
-// }
 abstract class DocumentBuilderBase<O extends ElementOptions> extends StatefulWidget {
 
   const DocumentBuilderBase({super.key});
@@ -56,11 +22,12 @@ abstract class DocumentBuilderBase<O extends ElementOptions> extends StatefulWid
 
 }
 
-@immutable
+//ignore: must_be_immutable
 class DocumentBuilder<O extends ElementOptions> extends DocumentBuilderBase<O> {
   final ElementBuilder<O> builder;
 
   late O options;
+
   DocumentBuilder({super.key, required this.builder});
 
   Type get dynamicOptionsType => O;
@@ -82,7 +49,6 @@ class _DocumentBuilderBase<O extends ElementOptions> extends State<DocumentBuild
   Widget build(BuildContext context) {
     return widget.build(context, widget.options);
   }
-  
 }
 
 class Document extends StatelessWidget {

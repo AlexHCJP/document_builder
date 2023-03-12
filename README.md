@@ -42,7 +42,7 @@ class AboutScreen extends StatelessWidget {
 ```
 
 
-### SubTitle use with help [SubTitleDoc] and [SubTitleOptions]
+### SubTitle use with help `SubTitleDoc` and `SubTitleOptions`
 ```dart
 SubTitleOptions(
   text: 'SubTitle',
@@ -56,7 +56,7 @@ SubTitleOptions(
 DocumentBuilder<SubTitleOptions>(builder: (context, options) => SubTitleDoc(options: options))
 ```
 
-### Text use with help [TextDoc] and [TextOptions]
+### Text use with help `TextDoc` and `TextOptions`
 ```dart
 TextOptions(
   text: 'SubTitle',
@@ -71,7 +71,7 @@ DocumentBuilder<TextOptions>(builder: (context, options) => TextDoc(options: opt
 ```
 
 
-### Table use with help [TableDoc] and [TableOptions]
+### Table use with help `TableDoc` and `TableOptions`
 ```dart
 TableOptions(
   table: [
@@ -86,4 +86,68 @@ TableOptions(
 ...
 ..
 DocumentBuilder<TableOptions>(builder: (context, options) => TableDoc(options: options))
+```
+
+
+# Add your custom widget 
+```dart
+
+class CustomElementOptions extends ElementOptions {
+  final Widget icon;
+  final String? text;
+  final TextStyle style;
+  final EdgeInsets padding;
+
+  CustomElementOptions({
+    required this.icon,
+    this.text,
+    this.style = const TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.w700
+    ),
+    this.padding = const EdgeInsets.symmetric(vertical: 20)
+  });
+}
+
+class CustomElementWidget extends StatelessWidget {
+  final CustomElementOptions options;
+
+  const CustomElementWidget({super.key, required this.options});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: options.padding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          options.icon,
+          SizedBox(width: 10,),
+          Expanded(
+            child: Text(options.text ?? '',
+              style: options.style,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
+### And use this
+```dart
+Document(
+  options: [
+    CustomElementOptions(
+        icon: Icon(Icons.account_circle, size: 30,),
+        text: 'The user has the right to be a user'
+    )
+  ],
+  builders: [
+    DocumentBuilder<CustomElementOptions>(
+        builder: (context, options) => CustomElementWidget(options: options)
+    ),
+  ]
+)
 ```

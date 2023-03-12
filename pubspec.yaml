@@ -1,11 +1,11 @@
 name: document_builder
 description: A package for creating beautiful privacy policies, user agreements, and more
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/AlexHCJP/document_builder
 
 environment:
-  sdk: '>=3.0.0-290.0.dev <4.0.0'
-  flutter: ">=1.17.0"
+  sdk: '>=2.19.4 <3.0.0'
+#  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
